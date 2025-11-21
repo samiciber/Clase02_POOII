@@ -1,12 +1,53 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\samue\\Documents\\POO2\\Clase02\\Clase02_POOII\\Clase02\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F4C72D5A-9BA6-44AE-A2FE-1017B1DAF218}|Clase02.csproj|d:\\samue\\documents\\poo2\\clase02\\clase02_pooii\\clase02\\views\\consultas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F4C72D5A-9BA6-44AE-A2FE-1017B1DAF218}|Clase02.csproj|solutionrelative:views\\consultas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4C72D5A-9BA6-44AE-A2FE-1017B1DAF218}|Clase02.csproj|D:\\samue\\Documents\\POO2\\Clase02\\Clase02_POOII\\Clase02\\controllers\\consultascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4C72D5A-9BA6-44AE-A2FE-1017B1DAF218}|Clase02.csproj|solutionrelative:controllers\\consultascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\samue\\Documents\\POO2\\Clase02\\Clase02_POOII\\Clase02\\Views\\Consultas\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Consultas\\Index.cshtml",
+              "ToolTip": "D:\\samue\\Documents\\POO2\\Clase02\\Clase02_POOII\\Clase02\\Views\\Consultas\\Index.cshtml",
+              "RelativeToolTip": "Views\\Consultas\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-20T23:31:04.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ConsultasController.cs",
+              "DocumentMoniker": "D:\\samue\\Documents\\POO2\\Clase02\\Clase02_POOII\\Clase02\\Controllers\\ConsultasController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ConsultasController.cs",
+              "ToolTip": "D:\\samue\\Documents\\POO2\\Clase02\\Clase02_POOII\\Clase02\\Controllers\\ConsultasController.cs",
+              "RelativeToolTip": "Controllers\\ConsultasController.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAuwCoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T23:07:00.636Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

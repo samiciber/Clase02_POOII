@@ -1,0 +1,22 @@
+﻿@using Clase02.Models
+@model IEnumerable<Alumno>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Buscar</h2>
+<div>
+    
+    @using (Html.BeginForm())
+    {
+        <em>Ingresa las iniciales del nombre</em>
+        @Html.TextBox("nombre", (string)ViewBag.BusquedaNombre)
+        <button type="submit">Consulta</button>
+    }
+</div>
+
+<h2>Listado de Alumnos</h2>
+<div>
+    @Html.Partial("_PartialAlumno")
+</div>
+
