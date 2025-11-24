@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Cibertec</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header">
+            <h1>CIBERTEC</h1>
+            <p>Instituto de Educación Superior</p>
+        </div>
+    </header>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="navbar">
+            <a href="@Url.Action("Index", "Home")">Inicio</a>
+            <a href="@Url.Action("Index", "Carreras")">Carreras</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Contacto</a>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer">
+            <p>&copy; @DateTime.Now.Year - Cibertec. Todos los derechos reservados.</p>
+            <p>Av. Próceres de la Independencia 3023-3043, San Juan de Lurigancho – Lima</p>
+            <p>Teléfono: 633-5555</p>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

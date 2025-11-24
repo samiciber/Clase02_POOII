@@ -1,0 +1,137 @@
+﻿/* estilos.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+.header {
+    background-color: #003d82;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+    .header h1 {
+        margin: 0;
+        font-size: 2.5em;
+    }
+
+    .header p {
+        margin: 10px 0 0 0;
+        font-size: 1.2em;
+    }
+
+/* Navigation */
+.navbar {
+    background-color: #005bb5;
+    overflow: hidden;
+}
+
+    .navbar a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+
+        .navbar a:hover {
+            background-color: #003d82;
+        }
+
+/* Wrapper principal */
+.wrapper {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Wrapper items - para las carreras */
+.wrapper-item {
+    border: 2px solid #005bb5;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #f9f9f9;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+    .wrapper-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .wrapper-item h2 {
+        color: #003d82;
+        margin-top: 0;
+        border-bottom: 2px solid #005bb5;
+        padding-bottom: 10px;
+    }
+
+    .wrapper-item img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        border-radius: 5px;
+        margin: 15px 0;
+        display: block;
+    }
+
+    .wrapper-item p {
+        line-height: 1.6;
+        color: #333;
+    }
+
+/* Footer */
+.footer {
+    background-color: #003d82;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+}
+
+    .footer p {
+        margin: 5px 0;
+    }
+
+/* Sección de información */
+.info-section {
+    background-color: #e8f4f8;
+    padding: 20px;
+    border-left: 4px solid #005bb5;
+    margin: 20px 0;
+}
+
+    .info-section h3 {
+        color: #003d82;
+        margin-top: 0;
+    }
+
+/* Lista de características */
+.caracteristicas-lista {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+    .caracteristicas-lista li {
+        padding: 8px 0;
+        padding-left: 25px;
+        position: relative;
+    }
+
+        .caracteristicas-lista li:before {
+            content: "✓";
+            color: #005bb5;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }

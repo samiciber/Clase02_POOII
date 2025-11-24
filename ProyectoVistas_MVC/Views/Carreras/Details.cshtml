@@ -1,0 +1,101 @@
+﻿@model ProyectoVistas_MVC.Models.Carrera
+@{
+    ViewBag.Title = "Model.Nombre";
+}
+
+<div class="wrapper">
+
+    <!-- Breadcrumb -->
+    <div style="margin-bottom: 20px;">
+        @Html.ActionLink("← Volver a Carreras", "Index", null, new { @style = "color: #005bb5; text-decoration: none;" })
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 30px;">
+
+        <!-- Columna de imagen -->
+        <div>
+            <img src="@Url.Content(Model.ImagenUrl)" alt="@Model.Nombre"
+                 style="width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+
+            <div style="background-color: #003d82; color: white; padding: 20px; border-radius: 8px; margin-top: 20px;">
+                <h3 style="margin-top: 0;">Información General</h3>
+                <p><strong>Duración:</strong> @Model.Duracion años</p>
+                <p><strong>Modalidad:</strong> @Model.Modalidad</p>
+                <p><strong>Código:</strong> CARR-00@Model.Id</p>
+                <hr style="border-color: rgba(255,255,255,0.3);" />
+                <p style="font-size: 0.9em;">
+                    <strong>Inicio de clases:</strong><br />
+                    Marzo y Agosto
+                </p>
+            </div>
+        </div>
+
+        <!-- Columna de contenido -->
+        <div>
+            <h1 style="color: #003d82; margin-top: 0;">@Model.Nombre</h1>
+
+            <div class="info-section">
+                <h3>Descripción de la Carrera</h3>
+                <p style="font-size: 1.1em; line-height: 1.8;">
+                    @Model.Descripcion
+                </p>
+            </div>
+
+            <div style="background-color: #f9f9f9; padding: 20px; border-left: 4px solid #005bb5; margin: 20px 0;">
+                <h3 style="color: #003d82; margin-top: 0;">¿Qué aprenderás?</h3>
+                <ul class="caracteristicas-lista">
+                    @foreach (var caracteristica in Model.Caracteristicas)
+                    {
+                        <li style="font-size: 1.05em;">@caracteristica</li>
+                    }
+                </ul>
+            </div>
+
+            <!-- Sección de perfil profesional -->
+            <div style="background-color: #e8f4f8; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <h3 style="color: #003d82; margin-top: 0;">Perfil del Egresado</h3>
+                <p>
+                    Al terminar la carrera de <strong>@Model.Nombre</strong>, estarás capacitado para:
+                </p>
+                <ul style="line-height: 1.8;">
+                    <li>Liderar proyectos en tu especialidad</li>
+                    <li>Aplicar metodologías y mejores prácticas del sector</li>
+                    <li>Resolver problemas complejos con pensamiento crítico</li>
+                    <li>Trabajar en equipos multidisciplinarios</li>
+                    <li>Adaptarte rápidamente a nuevas tecnologías</li>
+                </ul>
+            </div>
+
+            <!-- Botones -->
+            <div style="display: flex; gap: 15px; margin-top: 30px;">
+                <a href="#" style="background-color: #005bb5; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; flex: 1; text-align: center;">
+                    Solicitar Información
+                </a>
+                <a href="#" style="background-color: #28a745; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; flex: 1; text-align: center;">
+                    Inscríbete Aquí
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Carreras relacionadas -->
+    <div style="margin-top: 50px;">
+        <h2 style="color: #003d82; border-bottom: 2px solid #005bb5; padding-bottom: 10px;">
+            Otras Carreras que te pueden interesar
+        </h2>
+
+        @Html.Partial("_MenuCarreras")
+    </div>
+
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function() {
+            $('.wrapper').hide().fadeIn(800);
+        });
+    </script>
+}
+

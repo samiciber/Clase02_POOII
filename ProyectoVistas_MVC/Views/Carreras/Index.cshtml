@@ -1,0 +1,137 @@
+﻿@model List<ProyectoVistas_MVC.Models.Carrera>
+
+@{
+    ViewBag.Title = "Carreras Profesionales";
+    var totalCarreras = Model.Count;
+    var añoActual = DateTime.Now.Year;
+}
+
+@* Mostrar mensaje si existe *@
+@if (TempData["Mensaje"] != null)
+{
+    <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
+        <strong>✓</strong> @TempData["Mensaje"]
+    </div>
+}
+
+<div class="wrapper">
+    <h1 style="text-align: center; color: #003d82; margin-bottom: 30px;">
+        CARRERAS PROFESIONALES CIBERTEC
+    </h1>
+
+    <!-- Vista Parcial: Estadísticas -->
+    @Html.Partial("_Estadisticas")
+
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 20px;">
+
+        <!-- Columna principal -->
+        <div>
+            <div class="info-section">
+                <h3>Nuestras Carreras</h3>
+                <p>
+                    Cibertec ofrece una amplia gama de carreras profesionales diseñadas
+                    para formar líderes en tecnología e innovación. Conoce nuestras opciones
+                    y elige la que mejor se adapte a tus metas profesionales.
+                </p>
+            </div>
+
+            <!-- Agregar antes del foreach de carreras -->
+            <div style="background-color: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                @using (Html.BeginForm("Buscar", "Carreras", FormMethod.Get, new { @style = "display: flex; gap: 10px; align-items: center;" }))
+                {
+                    <input type="text" name="termino" placeholder="Buscar carrera..."
+                           value="@ViewBag.Termino"
+                           style="flex: 1; padding: 10px; border: 2px solid #005bb5; border-radius: 5px; font-size: 1em;" />
+
+                    <button type="submit"
+                            style="background-color: #005bb5; color: white; padding: 10px 30px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">
+                        Buscar
+                    </button>
+
+                    if (!string.IsNullOrEmpty(ViewBag.Termino as string))
+                    {
+                        @Html.ActionLink("Limpiar", "Index", null, new { @style = "background-color: #6c757d; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; line-height: 1.5;" })
+                    }
+                }
+
+                @if (ViewBag.Resultados != null)
+                {
+                    <p style="margin: 10px 0 0 0; color: #666;">
+                        Se encontraron <strong>@ViewBag.Resultados</strong> resultado(s) para "<strong>@ViewBag.Termino</strong>"
+                    </p>
+                }
+            </div>
+
+
+            <!-- Redes y Comunicaciones -->
+            @* Iterar sobre las carreras usando Razor *@
+            @foreach (var carrera in Model)
+            {
+                <div class="wrapper-item">
+                    <h2>@carrera.Nombre</h2>
+                    <img src="@Url.Content(carrera.ImagenUrl)" alt="@carrera.Nombre" />
+
+                    <p>@carrera.Descripcion</p>
+
+                    <div style="background-color: #e8f4f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+                        <p style="margin: 5px 0;">
+                            <strong>Duración:</strong> @carrera.Duracion años
+                        </p>
+                        <p style="margin: 5px 0;">
+                            <strong>Modalidad:</strong> @carrera.Modalidad
+                        </p>
+                    </div>
+
+                    <ul class="caracteristicas-lista">
+                        @foreach (var caracteristica in carrera.Caracteristicas)
+                        {
+                            <li>@caracteristica</li>
+                        }
+                    </ul>
+
+                    <div style="text-align: right; margin-top: 15px;">
+                        @Html.ActionLink("Ver más detalles", "Details", new { id = carrera.Id },
+                            new { @class = "btn", @style = "background-color: #005bb5; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;" })
+                    </div>
+                </div>
+            }
+            @* Mensaje si no hay carreras *@
+            @if (totalCarreras == 0)
+            {
+                <div class="info-section">
+                    <p style="text-align: center; color: #666;">
+                        No hay carreras disponibles en este momento.
+                    </p>
+                </div>
+            }
+        </div>
+
+        <!-- Columna lateral -->
+        <div>
+            <!-- Vista Parcial: Menú de Carreras -->
+            @Html.Partial("_MenuCarreras")
+
+            <!-- Vista Parcial: Información de Contacto -->
+            @Html.Partial("_InfoContacto")
+        </div>
+
+    </div>
+</div>
+
+@section scripts {
+    <script>
+    // Efecto hover suave para las carreras
+        $(document).ready(function () {
+            $('.wrapper-item').hover(
+                function () {
+                    $(this).css('background-color', '#e8f4f8');
+                },
+                function () {
+                    $(this).css('background-color', '#f9f9f9');
+                }
+            );
+            // Mostrar número total de carreras
+        console.log('Total de carreras cargadas: @totalCarreras');
+        });
+    </script>
+}
